@@ -3,5 +3,5 @@ numpy
 pandas
 streamlit
 plotly
-pillow
+Pillow
 scipy
