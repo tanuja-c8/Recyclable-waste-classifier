@@ -19,7 +19,7 @@ from PIL import Image
 from model.inference import load_model, predict_image
 from utils import log_prediction
 
-# --------------------------- Streamlit Page Config --------------------------- #
+
 st.set_page_config(
     page_title="EcoVision ♻️ Waste Classifier",
     layout="wide",
@@ -27,7 +27,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# --------------------------- Custom CSS --------------------------- #
+
 st.markdown("""
 <style>
 .main {
@@ -66,7 +66,7 @@ h1, h2, h3 {
 </style>
 """, unsafe_allow_html=True)
 
-# --------------------------- Sidebar --------------------------- #
+
 with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/3062/3062634.png", width=90)
     st.markdown("<h2 style='color:white;'>EcoVision</h2>", unsafe_allow_html=True)
@@ -76,7 +76,7 @@ with st.sidebar:
     st.markdown("---")
     st.caption("AI-powered recycling for a cleaner planet")
 
-# --------------------------- Load Model --------------------------- #
+
 @st.cache_resource
 def get_model():
     return load_model()
@@ -84,7 +84,7 @@ def get_model():
 model = get_model()
 CLASS_NAMES = ['glass', 'paper', 'cardboard', 'plastic', 'metal', 'trash']
 
-# --------------------------- Home Page --------------------------- #
+
 if menu == "🏠 Home":
     st.markdown("""
 <div style="
@@ -129,7 +129,7 @@ if menu == "🏠 Home":
     m3.metric("Avg Accuracy", "87%")
     m4.metric("Prediction Time", "0.3s")
 
-# --------------------------- Classify Waste Page --------------------------- #
+
 elif menu == "📸 Classify Waste":
     st.markdown("<h1 class='header'>Smart Waste Classification</h1>", unsafe_allow_html=True)
 
@@ -197,7 +197,7 @@ elif menu == "📸 Classify Waste":
             st.plotly_chart(fig, use_container_width=True)
 
 
-# --------------------------- Dashboard Page --------------------------- #
+
 elif menu == "📊 Dashboard":
     st.markdown("<h1 class='header'>Analytics Dashboard</h1>", unsafe_allow_html=True)
 
